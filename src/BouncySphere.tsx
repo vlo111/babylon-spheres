@@ -62,10 +62,10 @@ const BouncySphere: FC<BouncySphereProps> = ({ fontsReady, position, name, color
           generateMipMaps={true}
           samplingMode={Texture.TRILINEAR_SAMPLINGMODE}
         >
-          <rectangle name={`${name}-rect`} height={0.5} width={1} thickness={12} cornerRadius={12}>
+          <rectangle name={`${name}-rect`} height={3.5} width={10} thickness={12} cornerRadius={12}>
             <rectangle>
-              <babylon-button name={`${name}-close-icon`} background="green" onPointerDownObservable={onButtonClicked} >
-                <textBlock text={`${fontsReady ? '\uf00d' : 'X'} click ${name}`} fontFamily='FontAwesome' fontStyle="bold" fontSize={200} color="white" />
+              <babylon-button name={`${name}-close-icon`} background="darkred" onPointerDownObservable={onButtonClicked} >
+                <textBlock text={`${fontsReady ? '\uf00d' : 'X'} name ${name}`} fontFamily='FontAwesome' fontStyle="bold" fontSize={200} color="white" />
               </babylon-button>
             </rectangle>
           </rectangle>

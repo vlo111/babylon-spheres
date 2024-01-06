@@ -2,7 +2,7 @@ import React, { useState, useRef, FC, useEffect } from 'react';
 
 import "@babylonjs/core/Physics/physicsEngineComponent"  // side-effect adds scene.enablePhysics function
 import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent"; // side-effect for shadow generator
-import { CannonJSPlugin } from '@babylonjs/core/Physics/Plugins'
+import { CannonJSPlugin } from '@babylonjs/core/Physics'
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import { PhysicsImpostor } from '@babylonjs/core/Physics/physicsImpostor';
 
@@ -41,7 +41,6 @@ const App: FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>@babylonjs + `react-babylonjs`</p>
         <Engine antialias={true} adaptToDeviceRatio={true} canvasId="sample-canvas">
           <Scene enablePhysics={[gravityVector, new CannonJSPlugin()]}>
             <arcRotateCamera name="arc" target={new Vector3(0, 1, 0)}
@@ -57,7 +56,7 @@ const App: FC = () => {
                     name={x.toFixed()}
                     fontsReady={fontsReady}
                     position={new Vector3(Math.cos(2 * Math.PI / NUMBER_OF_BOXES * x) * RADIUS, 3, Math.sin(2 * Math.PI / NUMBER_OF_BOXES * x) * RADIUS)}
-                    color={new Color3(Math.abs(x -(NUMBER_OF_BOXES/2)) / 10, Math.abs(x -(NUMBER_OF_BOXES/2)) / 10, Math.abs(x -(NUMBER_OF_BOXES/2)) / 10)}
+                    color={new Color3(Math.abs(x -(NUMBER_OF_BOXES/4)) / 10, Math.abs(x -(NUMBER_OF_BOXES/5)) / 10, Math.abs(x -(NUMBER_OF_BOXES/3)) / 10)}
                   />
                 ))}
               </shadowGenerator>

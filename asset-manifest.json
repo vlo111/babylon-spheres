@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/create-react-app-typescript-babylonjs/static/css/main.e3b51263.css",
+    "main.js": "/create-react-app-typescript-babylonjs/static/js/main.dd7c7eb4.js",
+    "static/js/787.2f4e91ee.chunk.js": "/create-react-app-typescript-babylonjs/static/js/787.2f4e91ee.chunk.js",
+    "index.html": "/create-react-app-typescript-babylonjs/index.html",
+    "main.e3b51263.css.map": "/create-react-app-typescript-babylonjs/static/css/main.e3b51263.css.map",
+    "main.dd7c7eb4.js.map": "/create-react-app-typescript-babylonjs/static/js/main.dd7c7eb4.js.map",
+    "787.2f4e91ee.chunk.js.map": "/create-react-app-typescript-babylonjs/static/js/787.2f4e91ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3b51263.css",
+    "static/js/main.dd7c7eb4.js"
+  ]
+}

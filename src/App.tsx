@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from 'react';
+import { createBabylonScene } from './babylonScene';
+import {useFonts} from "./babylonScene/use-fonts";
 
-function App() {
+const App: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { fontsReady } = useFonts();
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      const babylonScene = createBabylonScene(canvasRef.current, fontsReady);
+
+      const renderLoop = () => {
+        babylonScene.render();
+      };
+
+      const engine = babylonScene.getEngine();
+      engine.runRenderLoop(renderLoop);
+
+      window.addEventListener('resize', () => {
+        engine.resize();
+      });
+
+      return () => {
+        babylonScene.dispose();
+      };
+    }
+  }, [fontsReady]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <canvas
+          ref={canvasRef}
+          style={{ width: '100%', height: '100%', touchAction: 'none' }}
+      />
   );
-}
+};
 
 export default App;
